@@ -49,7 +49,9 @@ func init() {
 	log.Logger = log.Output(zerolog.ConsoleWriter{Out: os.Stderr, TimeFormat: "15:04:05"})
 
 	serve.PersistentFlags().String("config", "", "path to configuration file")
-	serve.PersistentFlags().String("bind", "127.0.0.1:8080", "address and port to bind the HTTP server")
+	// Changed default bind to 0.0.0.0 so the server is reachable on the local network
+	// when running outside of Docker during development.
+	serve.PersistentFlags().String("bind", "0.0.0.0:8080", "address and port to bind the HTTP server")
 	serve.PersistentFlags().String("log-level", "debug", "log level (trace, debug, info, warn, error)")
 
 	root.AddCommand(serve)
