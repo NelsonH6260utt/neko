@@ -59,3 +59,5 @@ require (
 //
 // TODO: look into upgrading pion/webrtc to v4 once it stabilizes
 // TODO: upgrade golang.org/x/* deps after testing with go 1.22
+// TODO: bump go directive to 1.22 - need to verify toolchain compat with pion deps first
+//       ran into issues last time with pion/ice and the new net/netip changes
