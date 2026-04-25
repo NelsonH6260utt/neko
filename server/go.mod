@@ -56,3 +56,6 @@ require (
 
 // personal fork - tracking upstream m1k1o/neko for learning purposes
 // module path kept as upstream to simplify merging upstream changes
+//
+// TODO: look into upgrading pion/webrtc to v4 once it stabilizes
+// TODO: upgrade golang.org/x/* deps after testing with go 1.22
