@@ -45,11 +45,12 @@ var version = &cobra.Command{
 }
 
 func init() {
-	log.Logger = log.Output(zerolog.ConsoleWriter{Out: os.Stderr})
+	// Use pretty console logging with timestamps for easier local debugging
+	log.Logger = log.Output(zerolog.ConsoleWriter{Out: os.Stderr, TimeFormat: "15:04:05"})
 
 	serve.PersistentFlags().String("config", "", "path to configuration file")
-	serve.PersistentFlags().String("bind", "0.0.0.0:8080", "address and port to bind the HTTP server")
-	serve.PersistentFlags().String("log-level", "info", "log level (trace, debug, info, warn, error)")
+	serve.PersistentFlags().String("bind", "127.0.0.1:8080", "address and port to bind the HTTP server")
+	serve.PersistentFlags().String("log-level", "debug", "log level (trace, debug, info, warn, error)")
 
 	root.AddCommand(serve)
 	root.AddCommand(version)
