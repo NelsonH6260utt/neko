@@ -99,8 +99,8 @@ func runServe(cmd *cobra.Command, args []string) error {
 }
 
 func main() {
+	// log.Fatal already calls os.Exit(1) internally, so the explicit call below is unreachable
 	if err := root.Execute(); err != nil {
 		log.Fatal().Err(err).Msg("failed to execute command")
-		os.Exit(1)
 	}
 }
