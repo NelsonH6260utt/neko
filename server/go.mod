@@ -53,3 +53,6 @@ require (
 	gopkg.in/ini.v1 v1.67.0 // indirect
 	gopkg.in/yaml.v3 v3.0.1 // indirect
 )
+
+// personal fork - tracking upstream m1k1o/neko for learning purposes
+// module path kept as upstream to simplify merging upstream changes
